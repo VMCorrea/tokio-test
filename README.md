@@ -17,7 +17,7 @@ O projeto construído via Maven utilizando-se do Spring Boot, e diversos framewo
 Foi utilizada a JDK 8 como versão do Java para o projeto.
 
 # Instalação
-O jar do projeto pode ser encontrado aqui
+O jar do projeto pode ser encontrado [aqui](https://github.com/VMCorrea/tokio-test/releases)
 
 Para o projeto funcionar basta abrir a linha de comando e executar o jar baixado:
 			
