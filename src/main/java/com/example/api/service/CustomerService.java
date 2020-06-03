@@ -27,6 +27,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 
+ * CustomerService
+ * <p>
+ * Classe de service com as operações realizadas utilizando a classe Customer
+ * </p>
+ * 
  * @author Victor Corrêa
  *
  */
@@ -47,11 +52,12 @@ public class CustomerService {
 	}
 
 	/**
+	 * Método que configura a busca pela lista de Customers
 	 * 
-	 * @param pageNo
-	 * @param pageSize
-	 * @param sortBy
-	 * @return
+	 * @param pageNo   Número da página que será escolhida
+	 * @param pageSize Quantidade de elementos por página
+	 * @param sortBy   Campo utilizado para ordenação
+	 * @return ResponseEntity com a lista de Customer
 	 */
 	public ResponseEntity<List<Customer>> findAll(Integer pageNo, Integer pageSize, String sortBy) {
 
@@ -63,9 +69,10 @@ public class CustomerService {
 	}
 
 	/**
+	 * Método que configura a busca de um Customer
 	 * 
-	 * @param id
-	 * @return
+	 * @param id Identificador do customer
+	 * @return ResponseEntity com o Customer encontrado, se encontrado
 	 */
 	public ResponseEntity<Customer> findById(Long id) {
 
@@ -74,10 +81,10 @@ public class CustomerService {
 	}
 
 	/**
+	 * Método que configura a inserção de um Customer no banco
 	 * 
-	 * @param customer
-	 * @return
-	 * @throws URISyntaxException
+	 * @param customer Customer que será persistido
+	 * @return ResponseEntity com a mensagem resultante do processo
 	 */
 	public ResponseEntity<String> create(Customer customer) {
 
@@ -123,7 +130,7 @@ public class CustomerService {
 		try {
 			uri = new URI("/customers/" + customer.getId());
 		} catch (URISyntaxException e) {
-			
+
 			logger.error("Server Error: " + e.getMessage());
 			return ResponseEntity.status(500).body("Server Error!");
 		}
@@ -132,9 +139,10 @@ public class CustomerService {
 	}
 
 	/**
+	 * Método que configura a remoção de um Customer do banco
 	 * 
-	 * @param id
-	 * @return
+	 * @param id Identificador do customer
+	 * @return ResponseEntity com a mensagem resultante do processo
 	 */
 	public ResponseEntity<String> delete(Long id) {
 
@@ -153,9 +161,10 @@ public class CustomerService {
 	}
 
 	/**
+	 * Método que configura a remoção de um Customer do banco
 	 * 
-	 * @param customer
-	 * @return
+	 * @param customer Customer com os dados atualizados
+	 * @return ResponseEntity com a mensagem resultante do processo
 	 */
 	public ResponseEntity<String> update(Customer customer) {
 
