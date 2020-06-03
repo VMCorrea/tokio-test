@@ -79,7 +79,7 @@ public class CustomerService {
 	 * @return
 	 * @throws URISyntaxException
 	 */
-	public ResponseEntity<String> create(Customer customer) throws URISyntaxException {
+	public ResponseEntity<String> create(Customer customer) {
 
 		// Validações de Customer
 		logger.info("Validating Customer");
@@ -119,7 +119,15 @@ public class CustomerService {
 
 		logger.info("Customer created with id " + customer.getId());
 
-		URI uri = new URI("/customers/" + customer.getId());
+		URI uri;
+		try {
+			uri = new URI("/customers/" + customer.getId());
+		} catch (URISyntaxException e) {
+			
+			logger.error("Server Error: " + e.getMessage());
+			return ResponseEntity.status(500).body("Server Error!");
+		}
+
 		return ResponseEntity.created(uri).body("Customer created!");
 	}
 

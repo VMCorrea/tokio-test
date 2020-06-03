@@ -6,6 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+/**
+ * <h1>Address</h1>
+ * <p>
+ * Classe model que representa a entidade Address
+ * </p>
+ * 
+ * @author Victor Corrêa
+ *
+ */
 @Entity
 public class Address {
 

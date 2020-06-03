@@ -14,6 +14,15 @@ import javax.persistence.ManyToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+/**
+ * <h1>Customer</h1>
+ * <p>
+ * Classe model que representa a entidade Customer
+ * </p>
+ * 
+ * @author Victor Corrêa
+ *
+ */
 @Entity
 public class Customer {
 
