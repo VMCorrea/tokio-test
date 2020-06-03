@@ -48,7 +48,7 @@ public class CustomerController {
 	 */
 	@GetMapping
 	public ResponseEntity<List<Customer>> findAll(@RequestParam(defaultValue = "0") Integer page,
-			@RequestParam(defaultValue = "10") Integer size, @RequestParam(defaultValue = "id") String sortBy) {
+			@RequestParam(defaultValue = "5") Integer size, @RequestParam(defaultValue = "id") String sortBy) {
 		return service.findAll(page, size, sortBy);
 	}
 
